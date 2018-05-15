@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.btnExit = New System.Windows.Forms.Button()
@@ -81,8 +82,6 @@ Partial Class Form1
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblPin = New System.Windows.Forms.Label()
         Me.lblDeposit = New System.Windows.Forms.Label()
         Me.lblLoan = New System.Windows.Forms.Label()
         Me.lblWithdrawal = New System.Windows.Forms.Label()
@@ -103,14 +102,13 @@ Partial Class Form1
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.num3 = New System.Windows.Forms.Button()
         Me.num2 = New System.Windows.Forms.Button()
-        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.num1 = New System.Windows.Forms.Button()
         Me.btnDeposit = New System.Windows.Forms.Button()
         Me.btnLoan = New System.Windows.Forms.Button()
-        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.btnWithdrawal = New System.Windows.Forms.Button()
         Me.btnBalance = New System.Windows.Forms.Button()
-        Me.num1 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.lblPin = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -123,10 +121,8 @@ Partial Class Form1
         Me.Panel10.SuspendLayout()
         Me.Panel11.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.Panel4.SuspendLayout()
-        Me.Panel5.SuspendLayout()
+        Me.Panel14.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -135,15 +131,15 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
-        Me.TabControl1.Location = New System.Drawing.Point(566, 46)
+        Me.TabControl1.Location = New System.Drawing.Point(566, 23)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(774, 603)
+        Me.TabControl1.Size = New System.Drawing.Size(774, 704)
         Me.TabControl1.TabIndex = 1
         '
         'TabPage1
         '
-        Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage1.BackColor = System.Drawing.SystemColors.ControlDark
         Me.TabPage1.Controls.Add(Me.btnExit)
         Me.TabPage1.Controls.Add(Me.btnResetSystem)
         Me.TabPage1.Controls.Add(Me.btnReceiptSystem)
@@ -162,14 +158,14 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(766, 577)
+        Me.TabPage1.Size = New System.Drawing.Size(766, 678)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Loan"
         '
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExit.Location = New System.Drawing.Point(578, 457)
+        Me.btnExit.Location = New System.Drawing.Point(596, 496)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(102, 47)
         Me.btnExit.TabIndex = 19
@@ -179,7 +175,7 @@ Partial Class Form1
         'btnResetSystem
         '
         Me.btnResetSystem.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnResetSystem.Location = New System.Drawing.Point(375, 457)
+        Me.btnResetSystem.Location = New System.Drawing.Point(419, 496)
         Me.btnResetSystem.Name = "btnResetSystem"
         Me.btnResetSystem.Size = New System.Drawing.Size(102, 47)
         Me.btnResetSystem.TabIndex = 18
@@ -189,7 +185,7 @@ Partial Class Form1
         'btnReceiptSystem
         '
         Me.btnReceiptSystem.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReceiptSystem.Location = New System.Drawing.Point(188, 457)
+        Me.btnReceiptSystem.Location = New System.Drawing.Point(216, 496)
         Me.btnReceiptSystem.Name = "btnReceiptSystem"
         Me.btnReceiptSystem.Size = New System.Drawing.Size(129, 47)
         Me.btnReceiptSystem.TabIndex = 17
@@ -198,8 +194,9 @@ Partial Class Form1
         '
         'btnLoanSystem
         '
+        Me.btnLoanSystem.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnLoanSystem.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLoanSystem.Location = New System.Drawing.Point(19, 457)
+        Me.btnLoanSystem.Location = New System.Drawing.Point(39, 496)
         Me.btnLoanSystem.Name = "btnLoanSystem"
         Me.btnLoanSystem.Size = New System.Drawing.Size(102, 47)
         Me.btnLoanSystem.TabIndex = 16
@@ -208,40 +205,50 @@ Partial Class Form1
         '
         'lblTotalPayment
         '
+        Me.lblTotalPayment.BackColor = System.Drawing.SystemColors.Info
+        Me.lblTotalPayment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblTotalPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotalPayment.Location = New System.Drawing.Point(272, 384)
+        Me.lblTotalPayment.Location = New System.Drawing.Point(259, 310)
         Me.lblTotalPayment.Name = "lblTotalPayment"
         Me.lblTotalPayment.Size = New System.Drawing.Size(100, 31)
         Me.lblTotalPayment.TabIndex = 12
         '
         'lblMonthlyPayment
         '
+        Me.lblMonthlyPayment.BackColor = System.Drawing.SystemColors.Info
+        Me.lblMonthlyPayment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblMonthlyPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMonthlyPayment.Location = New System.Drawing.Point(272, 315)
+        Me.lblMonthlyPayment.Location = New System.Drawing.Point(259, 248)
         Me.lblMonthlyPayment.Name = "lblMonthlyPayment"
         Me.lblMonthlyPayment.Size = New System.Drawing.Size(100, 31)
         Me.lblMonthlyPayment.TabIndex = 11
         '
         'txtInterestRate
         '
+        Me.txtInterestRate.BackColor = System.Drawing.SystemColors.Info
+        Me.txtInterestRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtInterestRate.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtInterestRate.Location = New System.Drawing.Point(272, 229)
+        Me.txtInterestRate.Location = New System.Drawing.Point(259, 192)
         Me.txtInterestRate.Name = "txtInterestRate"
         Me.txtInterestRate.Size = New System.Drawing.Size(100, 31)
         Me.txtInterestRate.TabIndex = 10
         '
         'txtNumberOfYears
         '
+        Me.txtNumberOfYears.BackColor = System.Drawing.SystemColors.Info
+        Me.txtNumberOfYears.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtNumberOfYears.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNumberOfYears.Location = New System.Drawing.Point(272, 130)
+        Me.txtNumberOfYears.Location = New System.Drawing.Point(259, 124)
         Me.txtNumberOfYears.Name = "txtNumberOfYears"
         Me.txtNumberOfYears.Size = New System.Drawing.Size(100, 31)
         Me.txtNumberOfYears.TabIndex = 9
         '
         'txtAmountOfLoan
         '
+        Me.txtAmountOfLoan.BackColor = System.Drawing.SystemColors.Info
+        Me.txtAmountOfLoan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAmountOfLoan.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAmountOfLoan.Location = New System.Drawing.Point(272, 46)
+        Me.txtAmountOfLoan.Location = New System.Drawing.Point(258, 63)
         Me.txtAmountOfLoan.Name = "txtAmountOfLoan"
         Me.txtAmountOfLoan.Size = New System.Drawing.Size(100, 31)
         Me.txtAmountOfLoan.TabIndex = 8
@@ -258,50 +265,50 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(14, 399)
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(14, 313)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(163, 25)
+        Me.Label5.Size = New System.Drawing.Size(152, 30)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Total Payment"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(14, 325)
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(16, 248)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(193, 25)
+        Me.Label4.Size = New System.Drawing.Size(188, 30)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Monthly Payment"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(14, 234)
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(16, 192)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(210, 25)
+        Me.Label3.Size = New System.Drawing.Size(195, 30)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Enter Interest Rate"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(14, 143)
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(14, 125)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(236, 25)
+        Me.Label2.Size = New System.Drawing.Size(225, 30)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Enter Number of year"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(14, 61)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(14, 66)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(238, 25)
+        Me.Label1.Size = New System.Drawing.Size(228, 30)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Enter amount of Loan"
         '
@@ -312,7 +319,7 @@ Partial Class Form1
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(766, 577)
+        Me.TabPage2.Size = New System.Drawing.Size(766, 678)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Balance"
         '
@@ -703,40 +710,25 @@ Partial Class Form1
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Panel2.BackgroundImage = Global.VB_ATM.My.Resources.Resources.screen_empty_75
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel2.Controls.Add(Me.Panel1)
+        Me.Panel2.Controls.Add(Me.lblPin)
         Me.Panel2.Controls.Add(Me.lblDeposit)
         Me.Panel2.Controls.Add(Me.lblLoan)
         Me.Panel2.Controls.Add(Me.lblWithdrawal)
         Me.Panel2.Controls.Add(Me.lblBalance)
-        Me.Panel2.Location = New System.Drawing.Point(191, 46)
+        Me.Panel2.Location = New System.Drawing.Point(143, 92)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(230, 233)
+        Me.Panel2.Size = New System.Drawing.Size(217, 165)
         Me.Panel2.TabIndex = 1
-        '
-        'Panel1
-        '
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel1.Controls.Add(Me.lblPin)
-        Me.Panel1.Location = New System.Drawing.Point(3, 81)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(220, 68)
-        Me.Panel1.TabIndex = 24
-        '
-        'lblPin
-        '
-        Me.lblPin.AutoSize = True
-        Me.lblPin.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPin.Location = New System.Drawing.Point(98, 27)
-        Me.lblPin.Name = "lblPin"
-        Me.lblPin.Size = New System.Drawing.Size(0, 25)
-        Me.lblPin.TabIndex = 20
         '
         'lblDeposit
         '
         Me.lblDeposit.AutoSize = True
+        Me.lblDeposit.BackColor = System.Drawing.Color.Transparent
         Me.lblDeposit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDeposit.Location = New System.Drawing.Point(152, 168)
+        Me.lblDeposit.ForeColor = System.Drawing.Color.Orange
+        Me.lblDeposit.Location = New System.Drawing.Point(139, 129)
         Me.lblDeposit.Name = "lblDeposit"
         Me.lblDeposit.Size = New System.Drawing.Size(71, 20)
         Me.lblDeposit.TabIndex = 23
@@ -745,8 +737,10 @@ Partial Class Form1
         'lblLoan
         '
         Me.lblLoan.AutoSize = True
+        Me.lblLoan.BackColor = System.Drawing.Color.Transparent
         Me.lblLoan.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLoan.Location = New System.Drawing.Point(174, 44)
+        Me.lblLoan.ForeColor = System.Drawing.Color.Orange
+        Me.lblLoan.Location = New System.Drawing.Point(161, 18)
         Me.lblLoan.Name = "lblLoan"
         Me.lblLoan.Size = New System.Drawing.Size(49, 20)
         Me.lblLoan.TabIndex = 22
@@ -755,8 +749,10 @@ Partial Class Form1
         'lblWithdrawal
         '
         Me.lblWithdrawal.AutoSize = True
+        Me.lblWithdrawal.BackColor = System.Drawing.Color.Transparent
         Me.lblWithdrawal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWithdrawal.Location = New System.Drawing.Point(-2, 169)
+        Me.lblWithdrawal.ForeColor = System.Drawing.Color.Orange
+        Me.lblWithdrawal.Location = New System.Drawing.Point(3, 129)
         Me.lblWithdrawal.Name = "lblWithdrawal"
         Me.lblWithdrawal.Size = New System.Drawing.Size(97, 20)
         Me.lblWithdrawal.TabIndex = 21
@@ -765,8 +761,10 @@ Partial Class Form1
         'lblBalance
         '
         Me.lblBalance.AutoSize = True
+        Me.lblBalance.BackColor = System.Drawing.Color.Transparent
         Me.lblBalance.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBalance.Location = New System.Drawing.Point(-2, 44)
+        Me.lblBalance.ForeColor = System.Drawing.Color.Orange
+        Me.lblBalance.Location = New System.Drawing.Point(3, 18)
         Me.lblBalance.Name = "lblBalance"
         Me.lblBalance.Size = New System.Drawing.Size(74, 20)
         Me.lblBalance.TabIndex = 20
@@ -774,15 +772,15 @@ Partial Class Form1
         '
         'Panel3
         '
+        Me.Panel3.BackgroundImage = Global.VB_ATM.My.Resources.Resources.big_03
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Controls.Add(Me.Button9)
         Me.Panel3.Controls.Add(Me.Button10)
         Me.Panel3.Controls.Add(Me.num0)
         Me.Panel3.Controls.Add(Me.Button12)
         Me.Panel3.Controls.Add(Me.btnEnter)
-        Me.Panel3.Controls.Add(Me.num9)
         Me.Panel3.Controls.Add(Me.num8)
+        Me.Panel3.Controls.Add(Me.num9)
         Me.Panel3.Controls.Add(Me.num7)
         Me.Panel3.Controls.Add(Me.btnClear)
         Me.Panel3.Controls.Add(Me.num6)
@@ -792,257 +790,329 @@ Partial Class Form1
         Me.Panel3.Controls.Add(Me.num3)
         Me.Panel3.Controls.Add(Me.num2)
         Me.Panel3.Controls.Add(Me.num1)
-        Me.Panel3.Location = New System.Drawing.Point(19, 285)
+        Me.Panel3.Location = New System.Drawing.Point(53, 364)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(541, 364)
+        Me.Panel3.Size = New System.Drawing.Size(507, 363)
         Me.Panel3.TabIndex = 1
         '
         'Button9
         '
-        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button9.BackColor = System.Drawing.Color.Transparent
+        Me.Button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Button9.FlatAppearance.BorderSize = 0
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button9.Location = New System.Drawing.Point(346, 266)
+        Me.Button9.Image = Global.VB_ATM.My.Resources.Resources.atm_20
+        Me.Button9.Location = New System.Drawing.Point(290, 255)
+        Me.Button9.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(102, 79)
+        Me.Button9.Size = New System.Drawing.Size(175, 80)
         Me.Button9.TabIndex = 15
-        Me.Button9.UseVisualStyleBackColor = True
+        Me.Button9.UseVisualStyleBackColor = False
         '
         'Button10
         '
-        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button10.BackColor = System.Drawing.Color.Transparent
+        Me.Button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Button10.FlatAppearance.BorderSize = 0
+        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button10.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button10.Location = New System.Drawing.Point(240, 266)
+        Me.Button10.Image = Global.VB_ATM.My.Resources.Resources.atm_19
+        Me.Button10.Location = New System.Drawing.Point(195, 255)
+        Me.Button10.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(102, 79)
+        Me.Button10.Size = New System.Drawing.Size(90, 80)
         Me.Button10.TabIndex = 14
-        Me.Button10.UseVisualStyleBackColor = True
+        Me.Button10.UseVisualStyleBackColor = False
         '
         'num0
         '
-        Me.num0.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.num0.BackColor = System.Drawing.Color.Transparent
+        Me.num0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.num0.FlatAppearance.BorderSize = 0
+        Me.num0.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.num0.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.num0.Location = New System.Drawing.Point(132, 266)
+        Me.num0.Image = Global.VB_ATM.My.Resources.Resources.atm_18
+        Me.num0.Location = New System.Drawing.Point(105, 255)
+        Me.num0.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.num0.Name = "num0"
-        Me.num0.Size = New System.Drawing.Size(102, 79)
+        Me.num0.Size = New System.Drawing.Size(90, 80)
         Me.num0.TabIndex = 13
-        Me.num0.Text = "0"
-        Me.num0.UseVisualStyleBackColor = True
+        Me.num0.UseVisualStyleBackColor = False
         '
         'Button12
         '
-        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button12.BackColor = System.Drawing.Color.Transparent
+        Me.Button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Button12.FlatAppearance.BorderSize = 0
+        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button12.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button12.Location = New System.Drawing.Point(24, 266)
+        Me.Button12.Image = Global.VB_ATM.My.Resources.Resources.atm_17
+        Me.Button12.Location = New System.Drawing.Point(15, 255)
+        Me.Button12.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(102, 79)
+        Me.Button12.Size = New System.Drawing.Size(90, 80)
         Me.Button12.TabIndex = 12
-        Me.Button12.UseVisualStyleBackColor = True
+        Me.Button12.UseVisualStyleBackColor = False
         '
         'btnEnter
         '
-        Me.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnEnter.BackColor = System.Drawing.Color.Transparent
+        Me.btnEnter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnEnter.FlatAppearance.BorderSize = 0
+        Me.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEnter.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEnter.Location = New System.Drawing.Point(348, 181)
+        Me.btnEnter.Image = Global.VB_ATM.My.Resources.Resources.atm_16
+        Me.btnEnter.Location = New System.Drawing.Point(291, 175)
+        Me.btnEnter.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.btnEnter.Name = "btnEnter"
-        Me.btnEnter.Size = New System.Drawing.Size(102, 79)
+        Me.btnEnter.Size = New System.Drawing.Size(175, 80)
         Me.btnEnter.TabIndex = 11
-        Me.btnEnter.Text = "Enter"
-        Me.btnEnter.UseVisualStyleBackColor = True
+        Me.btnEnter.UseVisualStyleBackColor = False
         '
         'num9
         '
-        Me.num9.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.num9.BackColor = System.Drawing.Color.Transparent
+        Me.num9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.num9.FlatAppearance.BorderSize = 0
+        Me.num9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.num9.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.num9.Location = New System.Drawing.Point(240, 180)
+        Me.num9.Image = Global.VB_ATM.My.Resources.Resources.atm_15
+        Me.num9.Location = New System.Drawing.Point(195, 175)
+        Me.num9.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.num9.Name = "num9"
-        Me.num9.Size = New System.Drawing.Size(102, 79)
+        Me.num9.Size = New System.Drawing.Size(90, 80)
         Me.num9.TabIndex = 10
-        Me.num9.Text = "9"
-        Me.num9.UseVisualStyleBackColor = True
+        Me.num9.UseVisualStyleBackColor = False
         '
         'num8
         '
-        Me.num8.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.num8.BackColor = System.Drawing.Color.Transparent
+        Me.num8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.num8.FlatAppearance.BorderSize = 0
+        Me.num8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.num8.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.num8.Location = New System.Drawing.Point(132, 181)
+        Me.num8.Image = Global.VB_ATM.My.Resources.Resources.atm_14
+        Me.num8.Location = New System.Drawing.Point(105, 175)
+        Me.num8.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.num8.Name = "num8"
-        Me.num8.Size = New System.Drawing.Size(102, 79)
+        Me.num8.Size = New System.Drawing.Size(90, 80)
         Me.num8.TabIndex = 9
-        Me.num8.Text = "8"
-        Me.num8.UseVisualStyleBackColor = True
+        Me.num8.UseVisualStyleBackColor = False
         '
         'num7
         '
-        Me.num7.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.num7.BackColor = System.Drawing.Color.Transparent
+        Me.num7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.num7.FlatAppearance.BorderSize = 0
+        Me.num7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.num7.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.num7.Location = New System.Drawing.Point(24, 180)
+        Me.num7.Image = Global.VB_ATM.My.Resources.Resources.atm_13
+        Me.num7.Location = New System.Drawing.Point(15, 175)
+        Me.num7.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.num7.Name = "num7"
-        Me.num7.Size = New System.Drawing.Size(102, 79)
+        Me.num7.Size = New System.Drawing.Size(90, 80)
         Me.num7.TabIndex = 8
-        Me.num7.Text = "7"
-        Me.num7.UseVisualStyleBackColor = True
+        Me.num7.UseVisualStyleBackColor = False
         '
         'btnClear
         '
-        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnClear.BackColor = System.Drawing.Color.Transparent
+        Me.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnClear.FlatAppearance.BorderSize = 0
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClear.Location = New System.Drawing.Point(348, 96)
+        Me.btnClear.Image = Global.VB_ATM.My.Resources.Resources.atm_12
+        Me.btnClear.Location = New System.Drawing.Point(291, 95)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(102, 79)
+        Me.btnClear.Size = New System.Drawing.Size(175, 80)
         Me.btnClear.TabIndex = 7
-        Me.btnClear.Text = "Clear"
-        Me.btnClear.UseVisualStyleBackColor = True
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'num6
         '
-        Me.num6.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.num6.BackColor = System.Drawing.Color.Transparent
+        Me.num6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.num6.FlatAppearance.BorderSize = 0
+        Me.num6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.num6.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.num6.Location = New System.Drawing.Point(240, 95)
+        Me.num6.Image = Global.VB_ATM.My.Resources.Resources.atm_11
+        Me.num6.Location = New System.Drawing.Point(195, 95)
+        Me.num6.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.num6.Name = "num6"
-        Me.num6.Size = New System.Drawing.Size(102, 79)
+        Me.num6.Size = New System.Drawing.Size(90, 80)
         Me.num6.TabIndex = 6
-        Me.num6.Text = "6"
-        Me.num6.UseVisualStyleBackColor = True
+        Me.num6.UseVisualStyleBackColor = False
         '
         'num5
         '
-        Me.num5.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.num5.BackColor = System.Drawing.Color.Transparent
+        Me.num5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.num5.FlatAppearance.BorderSize = 0
+        Me.num5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.num5.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.num5.Location = New System.Drawing.Point(132, 96)
+        Me.num5.Image = Global.VB_ATM.My.Resources.Resources.atm_10
+        Me.num5.Location = New System.Drawing.Point(105, 95)
+        Me.num5.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.num5.Name = "num5"
-        Me.num5.Size = New System.Drawing.Size(102, 79)
+        Me.num5.Size = New System.Drawing.Size(90, 80)
         Me.num5.TabIndex = 5
-        Me.num5.Text = "5"
-        Me.num5.UseVisualStyleBackColor = True
+        Me.num5.UseVisualStyleBackColor = False
         '
         'num4
         '
-        Me.num4.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.num4.BackColor = System.Drawing.Color.Transparent
+        Me.num4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.num4.FlatAppearance.BorderSize = 0
+        Me.num4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.num4.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.num4.Location = New System.Drawing.Point(24, 96)
+        Me.num4.Image = Global.VB_ATM.My.Resources.Resources.atm_09
+        Me.num4.Location = New System.Drawing.Point(15, 95)
+        Me.num4.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.num4.Name = "num4"
-        Me.num4.Size = New System.Drawing.Size(102, 79)
+        Me.num4.Size = New System.Drawing.Size(90, 80)
         Me.num4.TabIndex = 4
-        Me.num4.Text = "4"
-        Me.num4.UseVisualStyleBackColor = True
+        Me.num4.UseVisualStyleBackColor = False
         '
         'btnCancel
         '
-        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnCancel.BackColor = System.Drawing.Color.Transparent
+        Me.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnCancel.FlatAppearance.BorderSize = 0
+        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.Location = New System.Drawing.Point(348, 10)
+        Me.btnCancel.Image = Global.VB_ATM.My.Resources.Resources.atm_07
+        Me.btnCancel.Location = New System.Drawing.Point(291, 15)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(102, 79)
+        Me.btnCancel.Size = New System.Drawing.Size(175, 80)
         Me.btnCancel.TabIndex = 3
-        Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = True
+        Me.btnCancel.UseVisualStyleBackColor = False
         '
         'num3
         '
-        Me.num3.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.num3.BackColor = System.Drawing.Color.Transparent
+        Me.num3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.num3.FlatAppearance.BorderSize = 0
+        Me.num3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.num3.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.num3.Location = New System.Drawing.Point(240, 10)
+        Me.num3.Image = Global.VB_ATM.My.Resources.Resources.atm_05
+        Me.num3.Location = New System.Drawing.Point(195, 15)
+        Me.num3.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.num3.Name = "num3"
-        Me.num3.Size = New System.Drawing.Size(102, 79)
+        Me.num3.Size = New System.Drawing.Size(90, 80)
         Me.num3.TabIndex = 2
-        Me.num3.Text = "3"
-        Me.num3.UseVisualStyleBackColor = True
+        Me.num3.UseVisualStyleBackColor = False
         '
         'num2
         '
-        Me.num2.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.num2.BackColor = System.Drawing.Color.Transparent
+        Me.num2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.num2.FlatAppearance.BorderSize = 0
+        Me.num2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.num2.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.num2.Location = New System.Drawing.Point(132, 11)
+        Me.num2.Image = Global.VB_ATM.My.Resources.Resources.atm_04
+        Me.num2.Location = New System.Drawing.Point(105, 15)
+        Me.num2.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.num2.Name = "num2"
-        Me.num2.Size = New System.Drawing.Size(102, 79)
+        Me.num2.Size = New System.Drawing.Size(90, 80)
         Me.num2.TabIndex = 1
-        Me.num2.Text = "2"
-        Me.num2.UseVisualStyleBackColor = True
-        '
-        'Panel4
-        '
-        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel4.Controls.Add(Me.btnDeposit)
-        Me.Panel4.Controls.Add(Me.btnLoan)
-        Me.Panel4.Location = New System.Drawing.Point(427, 46)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(133, 233)
-        Me.Panel4.TabIndex = 1
-        '
-        'btnDeposit
-        '
-        Me.btnDeposit.Location = New System.Drawing.Point(24, 150)
-        Me.btnDeposit.Name = "btnDeposit"
-        Me.btnDeposit.Size = New System.Drawing.Size(86, 55)
-        Me.btnDeposit.TabIndex = 17
-        Me.btnDeposit.Text = "<"
-        Me.btnDeposit.UseVisualStyleBackColor = True
-        '
-        'btnLoan
-        '
-        Me.btnLoan.Location = New System.Drawing.Point(24, 32)
-        Me.btnLoan.Name = "btnLoan"
-        Me.btnLoan.Size = New System.Drawing.Size(86, 55)
-        Me.btnLoan.TabIndex = 16
-        Me.btnLoan.Text = "<"
-        Me.btnLoan.UseVisualStyleBackColor = True
-        '
-        'Panel5
-        '
-        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel5.Controls.Add(Me.btnWithdrawal)
-        Me.Panel5.Controls.Add(Me.btnBalance)
-        Me.Panel5.Location = New System.Drawing.Point(19, 46)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(166, 233)
-        Me.Panel5.TabIndex = 2
-        '
-        'btnWithdrawal
-        '
-        Me.btnWithdrawal.Location = New System.Drawing.Point(24, 110)
-        Me.btnWithdrawal.Name = "btnWithdrawal"
-        Me.btnWithdrawal.Size = New System.Drawing.Size(124, 79)
-        Me.btnWithdrawal.TabIndex = 19
-        Me.btnWithdrawal.Text = ">"
-        Me.btnWithdrawal.UseVisualStyleBackColor = True
-        '
-        'btnBalance
-        '
-        Me.btnBalance.Location = New System.Drawing.Point(24, 20)
-        Me.btnBalance.Name = "btnBalance"
-        Me.btnBalance.Size = New System.Drawing.Size(124, 79)
-        Me.btnBalance.TabIndex = 18
-        Me.btnBalance.Text = ">"
-        Me.btnBalance.UseVisualStyleBackColor = True
+        Me.num2.UseVisualStyleBackColor = False
         '
         'num1
         '
+        Me.num1.BackColor = System.Drawing.Color.Transparent
+        Me.num1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.num1.FlatAppearance.BorderSize = 0
         Me.num1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.num1.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.num1.Location = New System.Drawing.Point(-9, 10)
+        Me.num1.Image = Global.VB_ATM.My.Resources.Resources.atm_03
+        Me.num1.Location = New System.Drawing.Point(15, 15)
+        Me.num1.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.num1.Name = "num1"
-        Me.num1.Size = New System.Drawing.Size(226, 164)
+        Me.num1.Size = New System.Drawing.Size(90, 80)
         Me.num1.TabIndex = 0
-        Me.num1.UseVisualStyleBackColor = True
+        Me.num1.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btnDeposit
         '
-        Me.Button1.Location = New System.Drawing.Point(425, 165)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(93, 76)
-        Me.Button1.TabIndex = 16
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnDeposit.BackColor = System.Drawing.Color.Transparent
+        Me.btnDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnDeposit.Image = CType(resources.GetObject("btnDeposit.Image"), System.Drawing.Image)
+        Me.btnDeposit.Location = New System.Drawing.Point(384, 226)
+        Me.btnDeposit.Name = "btnDeposit"
+        Me.btnDeposit.Size = New System.Drawing.Size(36, 21)
+        Me.btnDeposit.TabIndex = 17
+        Me.btnDeposit.Text = "<"
+        Me.btnDeposit.UseVisualStyleBackColor = False
+        '
+        'btnLoan
+        '
+        Me.btnLoan.BackColor = System.Drawing.Color.Transparent
+        Me.btnLoan.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnLoan.Image = CType(resources.GetObject("btnLoan.Image"), System.Drawing.Image)
+        Me.btnLoan.Location = New System.Drawing.Point(384, 116)
+        Me.btnLoan.Name = "btnLoan"
+        Me.btnLoan.Size = New System.Drawing.Size(37, 23)
+        Me.btnLoan.TabIndex = 16
+        Me.btnLoan.Text = "<"
+        Me.btnLoan.UseVisualStyleBackColor = False
+        '
+        'btnWithdrawal
+        '
+        Me.btnWithdrawal.BackColor = System.Drawing.Color.Transparent
+        Me.btnWithdrawal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnWithdrawal.Image = CType(resources.GetObject("btnWithdrawal.Image"), System.Drawing.Image)
+        Me.btnWithdrawal.Location = New System.Drawing.Point(77, 223)
+        Me.btnWithdrawal.Name = "btnWithdrawal"
+        Me.btnWithdrawal.Size = New System.Drawing.Size(40, 26)
+        Me.btnWithdrawal.TabIndex = 19
+        Me.btnWithdrawal.Text = ">"
+        Me.btnWithdrawal.UseVisualStyleBackColor = False
+        '
+        'btnBalance
+        '
+        Me.btnBalance.BackColor = System.Drawing.Color.Transparent
+        Me.btnBalance.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBalance.Image = CType(resources.GetObject("btnBalance.Image"), System.Drawing.Image)
+        Me.btnBalance.Location = New System.Drawing.Point(75, 113)
+        Me.btnBalance.Name = "btnBalance"
+        Me.btnBalance.Size = New System.Drawing.Size(49, 20)
+        Me.btnBalance.TabIndex = 18
+        Me.btnBalance.Text = ">"
+        Me.btnBalance.UseVisualStyleBackColor = False
+        '
+        'Panel14
+        '
+        Me.Panel14.BackgroundImage = Global.VB_ATM.My.Resources.Resources.screen_png_75
+        Me.Panel14.Controls.Add(Me.btnDeposit)
+        Me.Panel14.Controls.Add(Me.btnWithdrawal)
+        Me.Panel14.Controls.Add(Me.btnLoan)
+        Me.Panel14.Controls.Add(Me.Panel2)
+        Me.Panel14.Controls.Add(Me.btnBalance)
+        Me.Panel14.Location = New System.Drawing.Point(53, 19)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(507, 346)
+        Me.Panel14.TabIndex = 3
+        '
+        'lblPin
+        '
+        Me.lblPin.AutoSize = True
+        Me.lblPin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblPin.Location = New System.Drawing.Point(106, 84)
+        Me.lblPin.Name = "lblPin"
+        Me.lblPin.Size = New System.Drawing.Size(2, 15)
+        Me.lblPin.TabIndex = 24
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1352, 661)
-        Me.Controls.Add(Me.Panel5)
-        Me.Controls.Add(Me.Panel4)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(117, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(125, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1352, 883)
+        Me.Controls.Add(Me.Panel14)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "Form1"
         Me.Text = "Form1"
@@ -1066,11 +1136,8 @@ Partial Class Form1
         Me.Panel11.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel5.ResumeLayout(False)
+        Me.Panel14.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1108,9 +1175,7 @@ Partial Class Form1
     Friend WithEvents num3 As Button
     Friend WithEvents num2 As Button
     Friend WithEvents num1 As Button
-    Friend WithEvents Panel4 As Panel
     Friend WithEvents btnLoan As Button
-    Friend WithEvents Panel5 As Panel
     Friend WithEvents btnWithdrawal As Button
     Friend WithEvents btnBalance As Button
     Friend WithEvents btnExit As Button
@@ -1118,13 +1183,11 @@ Partial Class Form1
     Friend WithEvents btnReceiptSystem As Button
     Friend WithEvents btnLoanSystem As Button
     Friend WithEvents TabPage4 As TabPage
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents lblDeposit As Label
     Friend WithEvents lblLoan As Label
     Friend WithEvents lblWithdrawal As Label
     Friend WithEvents lblBalance As Label
     Friend WithEvents btnDeposit As Button
-    Friend WithEvents lblPin As Label
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
@@ -1163,5 +1226,6 @@ Partial Class Form1
     Friend WithEvents Label21 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents Label19 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Panel14 As Panel
+    Friend WithEvents lblPin As Label
 End Class

@@ -154,6 +154,10 @@
 
     End Sub
 
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
+
+    End Sub
+
     Private Sub num0_Click(sender As Object, e As EventArgs) Handles num0.Click
         lblPin.Text += "0"
     End Sub

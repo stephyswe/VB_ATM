@@ -94,6 +94,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="TheCrazyProgrammersBtn.vb">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -142,6 +145,23 @@
     <Content Include="images\atm_21.gif" />
     <Content Include="images\atm_22.gif" />
     <Content Include="images\big_03.gif" />
+    <Content Include="images\ScreenBtn.jpg" />
+    <Content Include="images\1button.png" />
+    <Content Include="images\1button_click.png" />
+    <Content Include="images\1button_hover.png" />
+    <Content Include="Resources\btn1.png" />
+    <Content Include="Resources\1button_click.png" />
+    <Content Include="Resources\1button_hover.png" />
+    <None Include="Resources\btnScreen-final.png" />
+    <None Include="Resources\screen-empty-75.gif" />
+    <None Include="Resources\screen-empty.gif" />
+    <None Include="Resources\scrnButton.png" />
+    <None Include="Resources\ScreenBtn.jpg" />
+    <None Include="Resources\screen-png-75.png" />
+    <None Include="Resources\screen-png.png" />
+    <None Include="Resources\Screen.jpg" />
+    <None Include="Resources\skyddad.jpeg" />
+    <None Include="Resources\12X36-background-111.jpg" />
     <None Include="Resources\12X36-background-11.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
