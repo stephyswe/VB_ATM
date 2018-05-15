@@ -142,6 +142,7 @@
     <Content Include="images\atm_21.gif" />
     <Content Include="images\atm_22.gif" />
     <Content Include="images\big_03.gif" />
+    <None Include="Resources\12X36-background-11.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
