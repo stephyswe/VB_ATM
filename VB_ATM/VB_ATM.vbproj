@@ -96,6 +96,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -114,6 +117,31 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\atm_01.gif" />
+    <Content Include="images\atm_02.gif" />
+    <Content Include="images\atm_03.png" />
+    <Content Include="images\atm_04.gif" />
+    <Content Include="images\atm_05.gif" />
+    <Content Include="images\atm_06.gif" />
+    <Content Include="images\atm_07.gif" />
+    <Content Include="images\atm_08.gif" />
+    <Content Include="images\atm_09.gif" />
+    <Content Include="images\atm_10.gif" />
+    <Content Include="images\atm_11.gif" />
+    <Content Include="images\atm_12.gif" />
+    <Content Include="images\atm_13.gif" />
+    <Content Include="images\atm_14.gif" />
+    <Content Include="images\atm_15.gif" />
+    <Content Include="images\atm_16.gif" />
+    <Content Include="images\atm_17.gif" />
+    <Content Include="images\atm_18.gif" />
+    <Content Include="images\atm_19.gif" />
+    <Content Include="images\atm_20.gif" />
+    <Content Include="images\atm_21.gif" />
+    <Content Include="images\atm_22.gif" />
+    <Content Include="images\big_03.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
