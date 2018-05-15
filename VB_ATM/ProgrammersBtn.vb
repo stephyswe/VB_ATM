@@ -1,4 +1,4 @@
-﻿Public Class TheCrazyProgrammersBtn
+﻿Public Class ProgrammersBtn
     Inherits Windows.Forms.Button
     Public Sub New()
         'Making Existing Button Transparent
@@ -9,27 +9,27 @@
         Me.BackColor = Color.Transparent
 
         'ReDevelop the existing Button adding image to a transparent image
-        Me.BackgroundImage = My.Resources.btn1
+        Me.BackgroundImage = My.Resources._1button
         Me.BackgroundImageLayout = ImageLayout.Stretch
     End Sub
 
 
-    Private Sub TheCrazyProgrammersBtn_MouseDown(sender As Object, e As MouseEventArgs) Handles Me.MouseDown
+    Private Sub ProgrammersBtn_MouseDown(sender As Object, e As MouseEventArgs) Handles Me.MouseDown
         Me.BackgroundImage = My.Resources._1button_click
     End Sub
 
 
-    Private Sub TheCrazyProgrammersBtn_MouseHover(sender As Object, e As EventArgs) Handles Me.MouseHover
+    Private Sub ProgrammersBtn_MouseHover(sender As Object, e As EventArgs) Handles Me.MouseHover
         Me.BackgroundImage = My.Resources._1button_hover
     End Sub
 
 
-    Private Sub TheCrazyProgrammersBtn_MouseLeave(sender As Object, e As EventArgs) Handles Me.MouseLeave
+    Private Sub ProgrammersBtn_MouseLeave(sender As Object, e As EventArgs) Handles Me.MouseLeave
         Me.BackgroundImage = My.Resources._1button
     End Sub
 
 
-    Private Sub TheCrazyProgrammersBtn_MouseUp(sender As Object, e As MouseEventArgs) Handles Me.MouseUp
+    Private Sub ProgrammersBtn_MouseUp(sender As Object, e As MouseEventArgs) Handles Me.MouseUp
         Me.BackgroundImage = My.Resources._1button
     End Sub
 End Class

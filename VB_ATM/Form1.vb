@@ -146,15 +146,9 @@
         rtfReceipt.AppendText("Total Payment" + vbTab + vbTab + vbTab + lblTotalPayment.Text + vbNewLine)
         rtfReceipt.AppendText("----------------------------------------------" + vbNewLine)
         rtfReceipt.AppendText("--------------Thank You------------------" + vbNewLine)
-
-
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
+    Private Sub btnLoanSystem_Click_1(sender As Object, e As EventArgs) Handles btnLoanSystem.Click
 
     End Sub
 
@@ -210,7 +204,7 @@
         End If
     End Sub
 
-    Private Sub btnLoanSystem_Click(sender As Object, e As EventArgs) Handles btnLoanSystem.Click
+    Private Sub btnLoanSystem_Click(sender As Object, e As EventArgs)
         InterestRate = Convert.ToDouble(txtInterestRate.Text)
         monthlyInterestRate = InterestRate / 1200
         numberofYear = Convert.ToInt32(txtNumberOfYears.Text)
