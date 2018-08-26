@@ -15,6 +15,7 @@ OS X & Linux:
 git clone https://github.com/stephyswe/Visual-Basic-ATM-Machine.git
 cd visual-basic-atm-machine
 vb_atm.sln
+Pin Code is 1234
 ```
 
 Windows:
@@ -23,6 +24,7 @@ Windows:
 git clone https://github.com/stephyswe/Visual-Basic-ATM-Machine.git
 cd visual-basic-atm-machine
 vb_atm.sln
+Pin Code is 1234
 ```
 
 ## Contributing
