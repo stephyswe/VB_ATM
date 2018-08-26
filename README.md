@@ -12,13 +12,17 @@
 OS X & Linux:
 
 ```sh
-npm install
+git clone https://github.com/stephyswe/Visual-Basic-ATM-Machine.git
+cd visual-basic-atm-machine
+vb_atm.sln
 ```
 
 Windows:
 
 ```sh
-npm install
+git clone https://github.com/stephyswe/Visual-Basic-ATM-Machine.git
+cd visual-basic-atm-machine
+vb_atm.sln
 ```
 
 ## Contributing
