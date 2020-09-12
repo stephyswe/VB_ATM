@@ -1,5 +1,4 @@
-# VB_ATM
-> Visual Basic - ATM Machine
+# Visual Basic - ATM Machine
 
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
